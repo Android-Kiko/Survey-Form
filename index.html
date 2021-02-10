@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+:root {
+  --color-white: #f3f3f3;
+  --color-darkblue: #1b1b32;
+  --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+  --color-green: #37af65;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin: 0;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: url(https://www.octaviahousing.org.uk/assets/000/000/958/Coronavirus_original.jpg?1584383506);
+}
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+p {
+  font-size: 1.125rem;
+}
+h1,
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+input, button, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button {
+  border: none;
+}
+.container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+.header {
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+.text-center {
+  text-align: center;
+}
+form {
+  background: var(--color-darkblue-alpha);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+}
+@media (min-width: 480px) {
+  form {
+    padding: 2.5rem;
+  }
+}
+.form-group {
+  margin: 0 auto 1.25rem auto;
+  padding: 0.25rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+}
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-green);
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.submit-button a{
+  color: white;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+          <h1 id="title" class="text-center">Covid Vaccine Survey</h1><!--User Story #1-->
+          <p id="description" class="description text-center"><!--User Story #2-->
+            Please fill out this survey on or before April 1, 2021
+          </p>
+        </header>
+        <form id="survey-form"><!--User Story #3-->
+          <div class="form-group">
+            <label id="name-label" for="name">First Name</label><!--User Story #10-->
+            <input type="text" id="name" class="form-control" placeholder="Enter your first name" required/><!--User Story #4--><!--User Story #11-->
+          </div>
+          <div class="form-group">
+            <label id="name-label" for="name">Last Name</label><!--User Story #10-->
+            <input type="text" id="name" class="form-control" placeholder="Enter your family name" required/><!--User Story #11-->
+          </div>
+          <div class="form-group">
+            <label id="email-label" for="email">Email</label><!--User Story #10-->
+            <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required/><!--User Story #5--><!--User Story #6--><!--User Story #11-->
+          </div>
+          <div class="form-group">
+            <label id="number-label" for="number">Age</label><!--User Story #10-->
+            <input type="number" name="age" id="number" min="1" max="100" class="form-control" placeholder="Enter your age" required><!--User Story #7--><!--User Story #8--><!--User Story #9--><!--User Story #11-->
+          </div>
+          <div class="form-group">
+            <p>Have you had any recent travel history?</p>
+            <select id="dropdown" name="role" class="form-control" required><!--User Story #12-->
+              <option disabled selected value>Specify Travel History</option>
+              <option>None</option>
+              <option>Inside the city</option>
+              <option>Outside the city</option>
+              <option>Outside the province</option>
+              <option>Outside the country</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Have you been in contact with anyone having cough or difficulty breathing?</p>
+            <select id="dropdown" name="role" class="form-control" required><!--User Story #12-->
+              <option disabled selected value>Specify exposure</option>
+              <option>I have</option>
+              <option>I have note</option>
+              <option>I might have</option>
+              <option>I don't remember</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>Do you have cough or experience difficulty breathing?</p>
+            <select id="dropdown" name="role" class="form-control" required><!--User Story #12-->
+              <option disabled selected value>Specify current condition</option>
+              <option>I have cough</option>
+              <option>I have a difficulty breathing</option>
+              <option>I don't have cough</option>
+              <option>I don't have a difficulty breathing</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <p>Would you like to take the vaccine?</p>
+            <label><input name="user-recommend" value="definitely" type="radio" class="input-radio">Yes, as soon as possible</label><!--User Story #13-->
+            <label><input name="user-recommend" value="maybe" type="radio" class="input-radio">Not at once</label><!--User Story #13-->
+          </div>
+      
+          <div class="form-group">
+            <p>If you have tested psotive for Covid-19, please check all your symptoms</p>
+      
+            <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox">Fever</label><!--User Story #14-->
+            <label><input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox">Dry cough</label><!--User Story #14-->
+            <label><input name="prefer" value="data-visualization" type="checkbox" class="input-checkbox">Tiredness</label><!--User Story #14-->
+            <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox">Aches and Pains</label><!--User Story #14-->
+            <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Sore throats</label><!--User Story #14-->
+            <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Diarrhoea</label><!--User Story #14-->
+            <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Conjunctivitis</label><!--User Story #14-->
+            <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Loss of taste or smell</label><!--User Story #14-->
+            <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">A rash on skin, or discolouration of fingers or toes</label><!--User Story #14-->
+            <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Difficulty breathing or shortness of breath</label><!--User Story #14-->
+            <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Chest pain or pressure</label><!--User Story #14-->
+            <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Loss of speech or movement</label><!--User Story #14-->
+          </div>
+      
+          <div class="form-group">
+            <p>We reply via email. Do you have any questions?</p>
+            <textarea id="comments" class="input-textarea" name="comment" placeholder="Type here..."></textarea><!--User Story #15-->
+          </div>
+      
+          <div class="form-group">
+            <button type="submit" id="submit" class="submit-button"><a href="#">Submit</a></button><!--User Story #16-->
+          </div>
+        </form>
+      </div>
+      
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
